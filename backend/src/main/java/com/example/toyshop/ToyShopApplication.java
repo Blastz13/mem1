@@ -18,8 +18,8 @@ public class ToyShopApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedOrigins("http://localhost:8080");
-                registry.addMapping("/**").allowedOrigins("http://localhost:8081");
-                registry.addMapping("/**").allowedOrigins("http://localhost:8082");
+//                registry.addMapping("/**").allowedOrigins("http://localhost:8081");
+//                registry.addMapping("/**").allowedOrigins("http://localhost:8082");
 //                registry.addMapping("/**").allowedOrigins("http://0.0.0.0:8080");
 //                registry.addMapping("/**").allowedOrigins("http://127.0.0.1:8080");
             }
