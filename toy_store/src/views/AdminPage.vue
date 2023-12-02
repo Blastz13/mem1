@@ -73,7 +73,7 @@
 
         <div class="payment__methods">
           <h3>Категория</h3>
-          <label v-for="category in categoryList" :key="category.id" class="method" :for="category.title">
+          <label v-for="category in categoryList" :key="category.id" class="method">
             <div class="method-input">
               <input name="category" class="my__input-radio" type="radio" :id="category.title" :value="category.id"
                      v-model.number="this.product.categoryId">
@@ -178,9 +178,9 @@
         </div>
         <div class="payment__methods">
           <h3>Категория</h3>
-          <label v-for="category in categoryFeedList" :key="category.id" class="method" :for="category.title">
+          <label v-for="category in categoryFeedList" :key="category.id" class="method">
             <div class="method-input">
-              <input name="category" class="my__input-radio" type="radio" :id="category.title" :value="category.id"
+              <input name="feed_category" class="my__input-radio" type="radio" :id="category.title" :value="category.id"
                      v-model.number="this.feed.categoryId">
               <span></span>
             </div>

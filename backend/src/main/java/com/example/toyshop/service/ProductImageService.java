@@ -22,10 +22,7 @@ import java.util.Objects;
 public class ProductImageService {
 
     private final ProductImageRepository repository;
-
-    @Value("${media.url}")
-    private String baseMediaUrl;
-    private final String IMAGES_DIRECTORY = baseMediaUrl + "/images/";
+    private final String IMAGES_DIRECTORY = "/app/images/";
 
     public ProductImage create(MultipartFile file, Product product) throws IOException {
         String fileName = product

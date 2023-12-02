@@ -3,7 +3,6 @@ package com.example.toyshop.service;
 import com.example.toyshop.entity.User;
 import com.example.toyshop.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +13,12 @@ public class UserService {
     private final UserRepository repository;
 
 
-    public User save(User user) {
-        return repository.save(user);
+    public void saveOrUpdate(User user) {
+        User foundUser = findById(user.getId());
+        if (foundUser != null) {
+            user.setId(foundUser.getId());
+        }
+        repository.save(user);
     }
 
     public List<User> findAll() {
@@ -23,7 +26,7 @@ public class UserService {
     }
 
     public User getByEmail(String username) {
-        return repository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("Could not find user"));
+        return repository.findByEmail(username);
     }
 
     public User findById(Long id) {

@@ -33,6 +33,7 @@ public class ProductService {
             product.setNew_price(product.getPrice() - product.getPrice() * product.getDiscount() / 100);
         else
             product.setNew_price(product.getPrice());
+        product.setAmount(100);
         return productRepository.save(product);
     }
 
