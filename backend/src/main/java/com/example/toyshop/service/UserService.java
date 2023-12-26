@@ -14,7 +14,7 @@ public class UserService {
 
 
     public void saveOrUpdate(User user) {
-        User foundUser = findById(user.getId());
+        User foundUser = getByEmail(user.getEmail());
         if (foundUser != null) {
             user.setId(foundUser.getId());
         }
